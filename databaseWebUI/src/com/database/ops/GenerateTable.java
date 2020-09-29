@@ -39,6 +39,7 @@ public class GenerateTable {
 			int rownumVal = 1;
 			while (resultSet.next()) {
 				htmlText += "<tr><th scope=\"row\">" + rownumVal + "</th>";
+				rownumVal++;
 				for (int i = 1; i <= columnsNumber; i++) {
 					String columnValue = resultSet.getObject(i).toString();
 					// System.out.print(columnValue + " " + rsmd.getColumnName(i));
