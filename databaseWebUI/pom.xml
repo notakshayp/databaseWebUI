@@ -34,11 +34,18 @@
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.21</version>
 </dependency>
-    
+    <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>4.0.1</version>
+    <scope>provided</scope>
+</dependency>
+  
   </dependencies>
    <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
+    
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.7.0</version>
@@ -83,4 +90,5 @@
   
     <finalName>dBaseWebUI</finalName>
   </build>
+  
 </project>
