@@ -32,7 +32,7 @@ public class ExecuteUserQuery extends HttpServlet {
 		String res = rQuery.runUserQuery(dbvendor, host, port, database, username, password, queryEditor);
 		PrintWriter pw = response.getWriter();
 		pw.print(res);
-
+		System.out.println(res + "\n");
 	}
 
 }
