@@ -29,9 +29,14 @@ public class ExecuteUserQuery extends HttpServlet {
 		String password = request.getParameter("password");
 		String queryEditor = request.getParameter("queryEditor");
 		RunQuery rQuery = new RunQuery();
-		String res = rQuery.runUserQuery(dbvendor, host, port, database, username, password, queryEditor);
-		PrintWriter pw = response.getWriter();
-		pw.print(res);
+		String res="";
+    try {
+      res = rQuery.runUserQuery(dbvendor, host, port, database, username, password, queryEditor);
+    } catch (SQLException e) {
+	    e.printStackTrace();
+    }
+    PrintWriter pw = response.getWriter();
+    pw.print(res);
 
 	}
 
