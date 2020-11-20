@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 public class GenerateTable {
 	public String createTable(String queryEditor, Connection c) {
+		
 		try {
 			Statement stmt = null;
 			stmt = c.createStatement();
@@ -22,6 +23,9 @@ public class GenerateTable {
 			}
 		} catch (Exception e) {
 			return "<b style=\"color:red\">" + (e.getMessage()) + "</b>";
+		}
+		finally{
+		c.close();
 		}
 
 	}
