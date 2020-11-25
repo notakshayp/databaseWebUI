@@ -31,4 +31,20 @@ public class CreateConnectionObject {
 		return c;
 	}
 
+	public Connection genarateOracleConnection(String host, String port, String database, String user, String password) {
+		
+		try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			c = DriverManager.getConnection("jdbc:oracle:thin:@" + host + ":" + port + "/" + database, user, password);
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+
+		}
+
+		return c;
+	}
+
 }
